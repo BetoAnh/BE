@@ -5,7 +5,7 @@ const db = {
   // server: '26.138.51.32',   // DESKTOP-8F687F2
   server: process.env.DB_HOST,   // VIETANH
   database: process.env.DB_DBNAME,
-  port: parseInt(process.env.PORT),
+  port: 1433,
   options: {
     encrypt: true,
     trustServerCertificate: true
