@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-require('dotenv').config();
 const session = require("express-session");
 const { v4: uuidv4 } = require("uuid");
 const loginRouter = require("./Components/Account/Login/Login");

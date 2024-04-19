@@ -1,20 +1,15 @@
-// const sql = require('mssql');
+const sql = require('mssql');
 const dbConfig = require('./db');
-const mysql = require('mysql');
 
 async function connectToDatabase() {
   try {
-    let pool = await mysql.createPool(dbConfig); //connect
+    let pool = await sql.connect(dbConfig);
     // const result = await pool.request().query('SELECT * FROM Users');
     // const users = result.recordset;
     // console.log(users);
     // return users;
-    // console.log("Connected SQL");
-    // return pool;
-    pool.getConnection((err, conn) => {
-      if(err) console.log(err)
-      console.log("Connected successfully")
-  })
+    console.log("Connected SQL");
+    return pool;
   } catch (error) {
     console.log('Error connecting to SQL Server:', error);
   }
